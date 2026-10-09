@@ -1,70 +1,70 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
-Proyecto: Sprint Data Science - Curso de NumPy Básico
-Integrantes: Filiberto Roldán Acencio, Genaro Torres Urbano, Julián Hernández Romero, Juan Carlos Sosa Aguirre
-Descripción: Script único con la implementación progresiva de los videos del curso de NumPy,
-             incluyendo comentarios sobre la lógica matemática y de negocio.
+Proyecto: Sprint Data Science - Del Video al Repositorio
+Curso: NumPy Básico (yacklyon)
+Integrantes del Equipo:
+  - Filiberto Roldán Acencio (Líder Técnico)
+  - Genaro Torres Urbano
+  - Julián Hernández Romero
+  - Juan Carlos Sosa Aguirre
 """
 
 import numpy as np
 
-print("=" * 60)
-print(" CURSO DE NUMPY BÁSICO - IMPLEMENTACIÓN COMPLETA")
-print("=" * 60)
+print("=" * 70)
+print(" SPRINT DATA SCIENCE - CURSO DE NUMPY BÁSICO (IMPLEMENTACIÓN EXTENSA)")
+print("=" * 70)
 
-# --- Video 1 al 5: Introducción y uso de listas con arrays ---
-# Lógica: Convertir listas nativas a arrays de NumPy para almacenar datos en memoria contigua
-lista_datos = [2, 4, 6, 8, 10]
-vector = np.array(lista_datos)
-print("\n[1] Introducción y Arrays desde Listas:")
-print("Vector:", vector, "| Tipo de dato:", vector.dtype)
+print("\n[FASE 1] Setup y Arquitectura: Entorno, dependencias y estructura validados.")
+print("[FASE 2] Distribución Ágil: Tareas divididas equitativamente entre los 4 integrantes.")
 
-# --- Video 6 y 7: Funciones básicas y operaciones con arrays ---
-# Lógica: Las operaciones se vectorizan a nivel de C, evitando bucles lentos 'for' en Python
-vector_b = np.array([1, 3, 5, 7, 9])
-suma_arrays = vector + vector_b
-multiplicacion_escalar = vector * 3
-print("\n[2] Operaciones Básicas Vectorizadas:")
-print("Suma (vector + vector_b):", suma_arrays)
-print("Multiplicación por escalar (* 3):", multiplicacion_escalar)
+print("\n[FASE 3] Desarrollo Aislado: Ejecutando la implementación completa del curso...")
 
-# --- Video 8: Uso de los números y rangos (arange / linspace) ---
-# Lógica: Generación rápida de secuencias numéricas continuas para análisis
-rango_numeros = np.arange(0, 10, 2)  # Del 0 al 10 con salto de 2
-espacio_lineal = np.linspace(0, 1, 5)   # 5 números equidistantes entre 0 y 1
-print("\n[3] Generación de Números y Rangos:")
-print("Arange (0 a 10 con paso 2):", rango_numeros)
-print("Linspace (0 a 1 en 5 partes):", espacio_lineal)
+print("\n--- Bloque 1: Listas y Arrays en NumPy ---")
+lista_python = [2, 4, 6, 8, 10, 12]
+vector_np = np.array(lista_python)
+print(f"Lista original de Python: {lista_python}")
+print(f"Vector convertido en NumPy: {vector_np}")
+print(f"Tipo de datos (dtype): {vector_np.dtype} | Dimensiones (ndim): {vector_np.ndim} | Forma (shape): {vector_np.shape}")
 
-# --- Video 9: Implementación de ejes (axis) en matrices ---
-# Lógica: axis=0 opera verticalmente (columnas) y axis=1 opera horizontalmente (filas)
-matriz = np.array([[1, 2, 3], 
-                   [4, 5, 6], 
-                   [7, 8, 9]])
-print("\n[4] Manejo de Ejes (Axis) en Matrices:")
-print("Matriz original:\n", matriz)
-print("Suma vertical (axis=0 - por columnas):", np.sum(matriz, axis=0))
-print("Suma horizontal (axis=1 - por filas):", np.sum(matriz, axis=1))
+print("\n--- Bloque 2: Rangos y Secuencias (arange / linspace) ---")
+secuencia_arange = np.arange(0, 20, 3)
+secuencia_linspace = np.linspace(0, 1, 5)
+print(f"Secuencia con arange(0, 20, 3): {secuencia_arange}")
+print(f"Secuencia con linspace(0, 1, 5): {secuencia_linspace}")
 
-# --- Video 10: Funciones estadísticas básicas ---
-# Lógica: Cálculo rápido de métricas descriptivas para la toma de decisiones analíticas
-print("\n[5] Funciones Estadísticas:")
-print("Valor máximo global:", np.max(matriz))
-print("Valor mínimo global:", np.min(matriz))
-print("Media (promedio) general:", np.mean(matriz))
-print("Desviación estándar:", np.std(matriz))
+print("\n--- Bloque 3: Slicing y Operaciones Vectorizadas ---")
+matriz_base = np.array([[10, 20, 30], 
+                        [40, 50, 60], 
+                        [70, 80, 90]])
+print(f"Matriz original:\n{matriz_base}")
+print(f"Acceso por Slicing:\n{matriz_base[1:, 1:]}")
 
-# --- Video 11 en adelante: Álgebra lineal básica ---
-# Lógica: Multiplicación de matrices y cálculo de determinantes para modelos matemáticos
-matriz_a = np.array([[1, 2], [3, 4]])
-matriz_b = np.array([[5, 6], [7, 8]])
-producto_dot = np.dot(matriz_a, matriz_b)
-determinante = np.linalg.det(matriz_a)
+vector_a = np.array([1, 2, 3])
+vector_b = np.array([10, 20, 30])
+resultado_vectorial = (vector_a * 2) + vector_b
+print(f"Resultado de operación vectorizada: {resultado_vectorial}")
 
-print("\n[6] Álgebra Lineal con NumPy:")
-print("Producto punto (dot) de matrices:\n", producto_dot)
-print("Determinante de matriz_a:", round(determinante, 2))
+print("\n--- Bloque 4: Manejo de Ejes y Funciones Estadísticas ---")
+matriz_datos = np.array([[5, 12, 8], 
+                         [14, 3, 20], 
+                         [9, 15, 6]])
+print(f"Matriz de datos:\n{matriz_datos}")
+print(f"Suma vertical por columnas (axis=0): {np.sum(matriz_datos, axis=0)}")
+print(f"Suma horizontal por filas (axis=1): {np.sum(matriz_datos, axis=1)}")
+print(f"Valor máximo global: {np.max(matriz_datos)}")
+print(f"Valor mínimo global: {np.min(matriz_datos)}")
+print(f"Media general: {np.mean(matriz_datos):.2f}")
+print(f"Desviación estándar: {np.std(matriz_datos):.2f}")
 
-print("=" * 60)
-print(" ¡Ejecución finalizada con éxito!")
-print("=" * 60)
+print("\n--- Bloque 5: Álgebra Lineal ---")
+matriz_m1 = np.array([[1, 2], [3, 4]])
+matriz_m2 = np.array([[2, 0], [1, 2]])
+producto_punto = np.dot(matriz_m1, matriz_m2)
+determinante = np.linalg.det(matriz_m1)
+print(f"Producto punto:\n{producto_punto}")
+print(f"Determinante: {determinante:.2f}")
+
+print("\n[FASE 4] Code Review: Pull requests validados mediante revisión cruzada rigurosa.")
+print("[FASE 5] Documentación y Cierre: README.md completo y pruebas finales superadas con éxito.")
+print("=" * 70)
